@@ -8,7 +8,7 @@ namespace FuncionesLINQ
     {
         public IEnumerable<string> ObtenerProvinciasQueEmpiezanConDeterminadasLetras(IEnumerable<string> provincias)
         {
-            throw new NotImplementedException();
+            return provincias.Where(p => p.StartsWith("S") || p.StartsWith("T"));
         }
 
         public IEnumerable<int> ObtenerNumerosMayoresA20(IEnumerable<int> numeros)
