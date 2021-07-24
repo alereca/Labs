@@ -18,7 +18,7 @@ namespace FuncionesLINQ
 
         public IEnumerable<int> ObtenerCodigoPostalDeCiudadesQueTenganEnSuNombreTresCarateresDeterminados(IEnumerable<Ciudad> ciudades, string ciudad)
         {
-            return ciudades.Where(c => c.Nombre.StartsWith(ciudad)).Select(c => c.CodigoPostal);
+            return ciudades.Where(c => c.Nombre.ToLower().Contains(ciudad.ToLower())).Select(c => c.CodigoPostal);
         }
 
         public IEnumerable<Empleado> AgregarEmpleadoListaDevolviendolaOrdenadaPorSueldo(IEnumerable<Empleado> empleados, IEnumerable<Empleado> empleadosParaAgregar, string order)
